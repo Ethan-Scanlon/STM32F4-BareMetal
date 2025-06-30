@@ -9,7 +9,7 @@
 #define SR_TXE			(1U<<7)
 
 #define SYS_FREQ		16000000
-#define APB1_CLK		(SYS_FREQ/2U)
+#define APB1_CLK		(SYS_FREQ)
 
 #define UART_BAUDRATE	115200
 
@@ -27,7 +27,6 @@ int main(void) {
 
 	while(1) {
 		uart2_write('Y');
-		for (volatile int i=0; i<100000; i++);
 	}
 }
 
