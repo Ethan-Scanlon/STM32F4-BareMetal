@@ -12,6 +12,6 @@
 
 void uart2_rxtx_init(void);
 void uart2_tx_init(void);
-char uart_read(void);
+char uart2_read(void);
 
 #endif /* UART_H_ */

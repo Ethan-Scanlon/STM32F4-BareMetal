@@ -94,12 +94,11 @@ void uart2_tx_init(void) {
 
 }
 
-char uart2_read(void) {
+char uart2_read() {
 	/*Make sure the receive data register is not empty*/
 	while(!(USART2->SR & SR_RXE)) {
-
-		return USART2->DR;
 	}
+	return USART2->DR;
 }
 
 void uart2_write(int ch) {

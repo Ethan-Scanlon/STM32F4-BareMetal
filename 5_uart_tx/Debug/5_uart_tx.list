@@ -98,7 +98,6 @@ int main(void) {
  8000212:	e7fb      	b.n	800020c <main+0x8>
 
 08000214 <uart2_tx_init>:
-
 	}
 }
 
