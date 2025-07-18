@@ -1,0 +1,5 @@
+/home/scanny/STM32CubeIDE/STM32F4_BareMetal/F4_chip_headers/CMSIS/Include/core_cm4.h:1688:22:__NVIC_EnableIRQ	2
+../Src/adc.c:14:6:pa1_adc_interrupt_init	1
+../Src/adc.c:50:6:pa1_adc_init	1
+../Src/adc.c:73:6:start_conversion	1
+../Src/adc.c:81:10:adc_read	2

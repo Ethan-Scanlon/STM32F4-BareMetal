@@ -7,7 +7,7 @@ Src/main.o: ../Src/main.c ../Inc/uart.h \
  /home/scanny/STM32CubeIDE/STM32F4_BareMetal/F4_chip_headers/CMSIS/Include/cmsis_gcc.h \
  /home/scanny/STM32CubeIDE/STM32F4_BareMetal/F4_chip_headers/CMSIS/Include/mpu_armv7.h \
  /home/scanny/STM32CubeIDE/STM32F4_BareMetal/F4_chip_headers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h \
- ../Inc/adc.h ../Inc/systick.h ../Inc/tim.h
+ ../Inc/adc.h ../Inc/systick.h ../Inc/tim.h ../Inc/exti.h
 ../Inc/uart.h:
 /home/scanny/STM32CubeIDE/STM32F4_BareMetal/F4_chip_headers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
 /home/scanny/STM32CubeIDE/STM32F4_BareMetal/F4_chip_headers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h:
@@ -20,3 +20,4 @@ Src/main.o: ../Src/main.c ../Inc/uart.h \
 ../Inc/adc.h:
 ../Inc/systick.h:
 ../Inc/tim.h:
+../Inc/exti.h:

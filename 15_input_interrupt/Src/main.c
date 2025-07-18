@@ -24,7 +24,7 @@ int main(void)
 
 	while(1) 
 	{
-	
+
 	}
 }
 
@@ -39,7 +39,7 @@ void EXTI15_10_IRQHandler(void)
 	if(EXTI->PR & LINE13)
 	{
 		/*Clear PR flag to rearm it*/
-		EXTI->PR |= LINE13
+		EXTI->PR |= LINE13;
 		/*Do something*/
 		exti_callback();
 	}
