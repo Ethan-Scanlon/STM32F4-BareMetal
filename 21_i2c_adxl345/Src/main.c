@@ -2,48 +2,32 @@
 #include <stdint.h>
 #include "uart.h"
 
-#define GPIOAEN			(1U<<0)
-#define GPIOA_5			(1U<<5)
+#include"adxl345.h"
+int16_t x,y,z;
+float xg, yg, zg;
 
-#define LED_PIN			(GPIOA_5)
+extern uint8_t data_rec[6];
+int main(void) 
+{
 
-static void dma_callback(void);
+	adxl_init();
 
-char key;
-
-int main(void) {
-
-	char message[31] = "Hello from Stm32 DMA transfer\n\r";
-
-	RCC->AHB1ENR |= GPIOAEN;
-	GPIOA->MODER |= (1U<<10);
-	GPIOA->MODER &=~ (1U<11);
-
-	uart2_tx_init();
-	dma1_stream6_init((uint32_t) message, (uint32_t) &USART2->DR, (uint32_t) 31);
 
 	while(1)
 	{
+		adxl_read_values(DATA_START_ADDR);
+
+		x=((data_rec[1]<<8)|data_rec[0]);
+		y=((data_rec[3]<<8)|data_rec[2]);
+		z=((data_rec[5]<<8)|data_rec[4]);
+		
+		xg = x*FOUR_G_SCALE_FACT;
+		yg = y*FOUR_G_SCALE_FACT;
+		zg = z*FOUR_G_SCALE_FACT;
 
 	}
 }
 
-static void dma_callback(void) {
-	GPIOA->ODR |= LED_PIN;
-}
-
-void DMA1_Stream6_IRQHandler(void)
-{
-	/*Check for transfer complete interrupt*/
-	if(DMA1->HISR & HISR_TCIF6)
-	{
-		/*Clear flag*/
-		DMA1->HIFCR |= HIFCR_CTCIF6;
-
-		dma_callback();
-
-	}
-}
 
 
 
